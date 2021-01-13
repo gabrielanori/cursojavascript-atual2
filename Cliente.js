@@ -12,7 +12,7 @@ export class Cliente{
 
     //para atribuir algo como o CPF quando eu for criar ele  e em nenhum outro momento da vida dele
     //const5ructos funçaõ especial
-    constructor(nome, cpf){
+    constructor(nome, cpf){ // sua principal responsabilidade é inicialização de atributos
         //quero associar o nome e cpf q vai receber de parametro com o nome e cpf da minha classe cliente
         this.nome = nome;
         this._cpf = cpf;

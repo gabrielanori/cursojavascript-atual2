@@ -1,6 +1,7 @@
-import { Cliente } from "./Cliente";
+import { Cliente } from "./Cliente.js";
 
 export class ContaCorrente {
+    static numeroDeContas = 0; // variavel contadora quero que seja estatica para que conte em todas senao da uma para cada pois cada objeto é unico e nao vai contar 1 2 3
     agencia;
     _cliente;
     // #saldo = 0;aqui com # ele bloqueia para alteração do saldo inicial mas ainda recebe deposito/saque
@@ -22,6 +23,12 @@ export class ContaCorrente {
       return this._saldo;
     }
 
+    constructor(agencia, cliente){
+
+        this.agencia = agencia;
+        this.cliente = cliente;
+        ContaCorrente.numeroDeContas += 1;
+    }
    sacar(valor){
         if(this._saldo >= valor ){
             this._saldo -= valor;
